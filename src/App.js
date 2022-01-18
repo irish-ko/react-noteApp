@@ -1,13 +1,25 @@
 import React, { useState } from "react";
+import Counter from "./components/Counter";
 
 export default function App() {
   const [state, changeState] = useState(1);
+  const [value, changeVal] = useState("Write text");
 
   return (
     <div className="App">
-      <h1>{state}</h1>
+      <h1>{value}</h1>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => changeVal(e.target.value)}
+      />
+      <hr />
 
-      <button onClick={() => changeState(state + 1)}>PRESS</button>
+      <Counter />
+      <Counter />
+      <Counter />
+      <Counter />
+      <Counter />
     </div>
   );
 }
