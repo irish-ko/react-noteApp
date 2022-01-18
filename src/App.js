@@ -1,10 +1,13 @@
-import "./styles.css";
+import React, { useState } from "react";
 
 export default function App() {
+  const [state, changeState] = useState(1);
+
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>{state}</h1>
+
+      <button onClick={() => changeState(state + 1)}>PRESS</button>
     </div>
   );
 }
